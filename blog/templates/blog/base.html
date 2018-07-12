@@ -11,6 +11,10 @@
         <div class="page-header">
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="oi oi-plus" title="New post" aria-hidden="true"></span></a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="oi oi-document" title="Draft list" aria-hidden="true"></span></a>
+                <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Logout </a>)</small></p>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu"><span class="oi oi-lock-locked" title="Login" area-hidden="true"></span></a>
             {% endif %}
             <h1><a href="/">Django Marmot</a></h1>
         </div>
